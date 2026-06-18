@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0E1116">
+<meta name="description" content="FitTrack Pro — offline fitness tracker. All data stays on your device.">
+<title>FitTrack Pro</title>
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+
+<!-- iOS home-screen app support -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="FitTrack">
+<meta name="format-detection" content="telephone=no">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <div class="brand">
+      <span class="mark" id="brandMark"></span>
+      <span><b>FitTrack Pro</b><small>On-device · offline</small></span>
+    </div>
+    <nav class="nav" id="nav"></nav>
+    <div class="side-foot">
+      <div><span class="num" id="footWorkouts">0</span> workouts logged</div>
+      <div style="margin-top:3px"><span class="num" id="footCals">0</span> kcal all-time</div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="mobile-top">
+          <span class="mark" id="brandMarkM"></span>
+        </div>
+        <div>
+          <h1 id="viewTitle">Dashboard</h1>
+          <div class="sub" id="viewSub"></div>
+        </div>
+      </div>
+      <div class="top-actions" style="gap:8px">
+        <span class="save-status saved" id="saveStatus" title="Your data saves automatically on this device">Saved</span>
+        <button class="iconbtn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme"></button>
+        <button class="btn primary" id="addBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" width="16" height="16"><path d="M12 5v14M5 12h14"/></svg>
+          <span class="addlbl">Log workout</span>
+        </button>
+      </div>
+    </div>
+    <div id="view"><div class="card"><div class="empty"><h3>Loading…</h3><p>Starting FitTrack Pro. If this doesn't disappear, this page is being opened in a preview that can't run apps — install it to your Home Screen first.</p></div></div></div>
+  </main>
+</div>
+
+<nav class="botnav" id="botnav"></nav>
+
+<div class="scrim" id="scrim">
+  <div class="modal" id="modal"></div>
+</div>
+
+<div class="toast-wrap" id="toasts"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
